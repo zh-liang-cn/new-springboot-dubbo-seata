@@ -52,13 +52,6 @@
         </dependency>
 
         <!-- seata 配置 -->
-        <!--seata-->
-        <dependency>
-            <groupId>io.seata</groupId>
-            <artifactId>seata-dubbo</artifactId>
-            <version>1.7.1</version>
-            <type>pom</type>
-        </dependency>
         <dependency>
             <groupId>io.seata</groupId>
             <artifactId>seata-spring-boot-starter</artifactId>
