@@ -15,16 +15,13 @@
  */
 package io.seata.samples.integration.stock;
 
-import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
-
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication(scanBasePackages = "io.seata.samples.integration.stock")
-@EnableDiscoveryClient
-@MapperScan({"io.seata.samples.integration.stock.mapper"})
+@SpringBootApplication
+@MapperScan("io.seata.samples.integration.stock.mapper")
 @EnableDubbo(scanBasePackages = "io.seata.samples.integration.stock")
 public class StockExampleApplication {
 

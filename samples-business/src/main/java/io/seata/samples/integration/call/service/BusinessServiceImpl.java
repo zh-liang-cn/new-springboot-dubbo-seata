@@ -15,8 +15,6 @@
  */
 package io.seata.samples.integration.call.service;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-
 import io.seata.core.context.RootContext;
 import io.seata.samples.integration.common.dto.BusinessDTO;
 import io.seata.samples.integration.common.dto.CommodityDTO;
@@ -27,6 +25,7 @@ import io.seata.samples.integration.common.enums.RspStatusEnum;
 import io.seata.samples.integration.common.exception.DefaultException;
 import io.seata.samples.integration.common.response.ObjectResponse;
 import io.seata.spring.annotation.GlobalTransactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -37,10 +36,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class BusinessServiceImpl implements BusinessService {
 
-    @Reference(version = "1.0.0")
+    @Autowired
     private StockDubboService stockDubboService;
 
-    @Reference(version = "1.0.0")
+    @Autowired
     private OrderDubboService orderDubboService;
 
     private boolean flag;
@@ -52,7 +51,7 @@ public class BusinessServiceImpl implements BusinessService {
      * @Return:
      */
     @Override
-    @GlobalTransactional(timeoutMills = 300000, name = "dubbo-gts-seata-example")
+    @GlobalTransactional
     public ObjectResponse handleBusiness(BusinessDTO businessDTO) {
         System.out.println("开始全局事务，XID = " + RootContext.getXID());
         ObjectResponse<Object> objectResponse = new ObjectResponse<>();
