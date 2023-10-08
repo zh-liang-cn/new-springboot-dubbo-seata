@@ -34,9 +34,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <java.version>1.8</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <java.version>11</java.version>
 
         <!-- 数据源相关 -->
         <druid.version>1.1.22</druid.version>
@@ -46,7 +46,7 @@
 
         <!-- dubbo相关 -->
         <dubbo-boot.version>3.2.6</dubbo-boot.version>
-        <springboot.version>3.1.0</springboot.version>
+        <springboot.version>2.7.16</springboot.version>
 
         <lombok.version>1.18.26</lombok.version>
         <nacos-client.verison>2.0.4</nacos-client.verison>
